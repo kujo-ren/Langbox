@@ -1,0 +1,57 @@
+name: Build and Release Manually
+
+on:
+  workflow_dispatch: 
+jobs:
+  build:
+    name: Build Linux Binary
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller --onefile --noconsole --name langbox \
+            --add-data "languages.json:." \
+            main.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: langbox-linux-x86_64
+          path: dist/langbox
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download built binary
+        uses: actions/download-artifact@v4
+        with:
+          name: langbox-linux-x86_64
+          path: dist/
+
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: manual-build-${{ github.run_number }} 
+          name: 'Manual Build #${{ github.run_number }}'
+          files: dist/langbox
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
