@@ -1,0 +1,624 @@
+{
+  "schema_version": 1,
+  "app_name": "Langbox",
+  "categories": [
+    "Web・スクリプト",
+    "システム・低レイヤ",
+    "エンタープライズ・モバイル",
+    "コンパイル言語",
+    "WebAssembly",
+    "アセンブリ",
+    "関数型・論理型",
+    "科学技術・データ",
+    "ハードウェア記述"
+  ],
+  "languages": [
+    {
+      "name": "Python",
+      "category": "Web・スクリプト",
+      "description": "AI・データ分析・Web・自動化",
+      "debian": [
+        "python3",
+        "python3-pip"
+      ],
+      "arch": [
+        "python",
+        "python-pip"
+      ],
+      "check": [
+        "python3",
+        "--version"
+      ]
+    },
+    {
+      "name": "JavaScript / Node.js",
+      "category": "Web・スクリプト",
+      "description": "Webフロントエンド・サーバーサイド",
+      "debian": [
+        "nodejs",
+        "npm"
+      ],
+      "arch": [
+        "nodejs",
+        "npm"
+      ],
+      "check": [
+        "node",
+        "--version"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "category": "Web・スクリプト",
+      "description": "JavaScriptに型を追加する言語。npm経由で導入",
+      "debian": [
+        "nodejs",
+        "npm"
+      ],
+      "arch": [
+        "nodejs",
+        "npm"
+      ],
+      "check": [
+        "tsc",
+        "--version"
+      ],
+      "note": "OSパッケージではNode.js/npmを導入します。TypeScript本体は npm install -g typescript で別途導入してください。"
+    },
+    {
+      "name": "Ruby",
+      "category": "Web・スクリプト",
+      "description": "Web開発・スクリプト",
+      "debian": [
+        "ruby-full"
+      ],
+      "arch": [
+        "ruby"
+      ],
+      "check": [
+        "ruby",
+        "--version"
+      ]
+    },
+    {
+      "name": "PHP",
+      "category": "Web・スクリプト",
+      "description": "Webバックエンド・CMS",
+      "debian": [
+        "php"
+      ],
+      "arch": [
+        "php"
+      ],
+      "check": [
+        "php",
+        "--version"
+      ]
+    },
+    {
+      "name": "Go",
+      "category": "Web・スクリプト",
+      "description": "クラウド・Web API・CLI",
+      "debian": [
+        "golang"
+      ],
+      "arch": [
+        "go"
+      ],
+      "check": [
+        "go",
+        "version"
+      ]
+    },
+    {
+      "name": "Perl",
+      "category": "Web・スクリプト",
+      "description": "テキスト処理・システム管理",
+      "debian": [
+        "perl"
+      ],
+      "arch": [
+        "perl"
+      ],
+      "check": [
+        "perl",
+        "--version"
+      ]
+    },
+    {
+      "name": "Bash / Zsh",
+      "category": "Web・スクリプト",
+      "description": "シェルスクリプト・自動化",
+      "debian": [
+        "bash",
+        "zsh"
+      ],
+      "arch": [
+        "bash",
+        "zsh"
+      ],
+      "check": [
+        "bash",
+        "--version"
+      ]
+    },
+    {
+      "name": "C / C++ (GCC)",
+      "category": "システム・低レイヤ",
+      "description": "OS・組み込み・ゲーム・高速処理",
+      "debian": [
+        "build-essential"
+      ],
+      "arch": [
+        "base-devel",
+        "gcc"
+      ],
+      "check": [
+        "gcc",
+        "--version"
+      ]
+    },
+    {
+      "name": "Clang / LLVM",
+      "category": "システム・低レイヤ",
+      "description": "C/C++コンパイラ・LLVMツールチェーン",
+      "debian": [
+        "clang"
+      ],
+      "arch": [
+        "clang"
+      ],
+      "check": [
+        "clang",
+        "--version"
+      ]
+    },
+    {
+      "name": "Rust",
+      "category": "システム・低レイヤ",
+      "description": "メモリ安全なシステム開発",
+      "debian": [
+        "rustc",
+        "cargo"
+      ],
+      "arch": [
+        "rust"
+      ],
+      "check": [
+        "rustc",
+        "--version"
+      ]
+    },
+    {
+      "name": "Zig",
+      "category": "システム・低レイヤ",
+      "description": "モダンな低レイヤ・システム言語",
+      "debian": [],
+      "arch": [
+        "zig"
+      ],
+      "check": [
+        "zig",
+        "version"
+      ],
+      "note": "Debian/Ubuntuでは標準APTパッケージがない場合があります。公式配布物などから手動導入してください。"
+    },
+    {
+      "name": "Java",
+      "category": "エンタープライズ・モバイル",
+      "description": "業務システム・JVM・Android開発",
+      "debian": [
+        "default-jdk"
+      ],
+      "arch": [
+        "jdk-openjdk"
+      ],
+      "check": [
+        "java",
+        "-version"
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "category": "エンタープライズ・モバイル",
+      "description": "Android・JVM開発",
+      "debian": [
+        "kotlin"
+      ],
+      "arch": [
+        "kotlin"
+      ],
+      "check": [
+        "kotlinc",
+        "-version"
+      ]
+    },
+    {
+      "name": "C# / .NET",
+      "category": "エンタープライズ・モバイル",
+      "description": "Web・デスクトップ・ゲーム開発",
+      "debian": [],
+      "arch": [
+        "dotnet-sdk"
+      ],
+      "check": [
+        "dotnet",
+        "--version"
+      ],
+      "note": "Debian/UbuntuではMicrosoftの公式APTリポジトリ設定が必要な場合があるため、自動導入対象外です。"
+    },
+    {
+      "name": "Swift",
+      "category": "エンタープライズ・モバイル",
+      "description": "Appleプラットフォーム・サーバーサイド",
+      "debian": [],
+      "arch": [],
+      "check": [
+        "swift",
+        "--version"
+      ],
+      "note": "ディストリビューション標準パッケージでの導入は環境差が大きいため、自動導入対象外です。"
+    },
+    {
+      "name": "Haxe",
+      "category": "コンパイル言語",
+      "description": "C++・JavaScript・Luaなど複数環境へ出力",
+      "debian": [
+        "haxe"
+      ],
+      "arch": [
+        "haxe"
+      ],
+      "check": [
+        "haxe",
+        "--version"
+      ]
+    },
+    {
+      "name": "Vala",
+      "category": "コンパイル言語",
+      "description": "GNOME/Linuxアプリ開発",
+      "debian": [
+        "valac"
+      ],
+      "arch": [
+        "vala"
+      ],
+      "check": [
+        "valac",
+        "--version"
+      ]
+    },
+    {
+      "name": "Nim",
+      "category": "コンパイル言語",
+      "description": "Python風構文のコンパイル言語",
+      "debian": [
+        "nim"
+      ],
+      "arch": [
+        "nim"
+      ],
+      "check": [
+        "nim",
+        "--version"
+      ]
+    },
+    {
+      "name": "Crystal",
+      "category": "コンパイル言語",
+      "description": "Ruby風構文のネイティブコンパイル言語",
+      "debian": [],
+      "arch": [
+        "crystal"
+      ],
+      "check": [
+        "crystal",
+        "--version"
+      ],
+      "note": "Debian/Ubuntuは公式手順・リポジトリの追加が必要な場合があります。"
+    },
+    {
+      "name": "CoffeeScript",
+      "category": "コンパイル言語",
+      "description": "JavaScriptへ変換する簡潔な構文",
+      "debian": [
+        "nodejs",
+        "npm"
+      ],
+      "arch": [
+        "nodejs",
+        "npm"
+      ],
+      "check": [
+        "coffee",
+        "--version"
+      ],
+      "note": "Node.js/npmを導入後、npm install -g coffeescript で導入してください。"
+    },
+    {
+      "name": "WABT",
+      "category": "WebAssembly",
+      "description": "WasmとWATの変換・検証ツール",
+      "debian": [
+        "wabt"
+      ],
+      "arch": [
+        "wabt"
+      ],
+      "check": [
+        "wasm2wat",
+        "--version"
+      ]
+    },
+    {
+      "name": "Wasmtime",
+      "category": "WebAssembly",
+      "description": "WebAssemblyランタイム",
+      "debian": [],
+      "arch": [
+        "wasmtime"
+      ],
+      "check": [
+        "wasmtime",
+        "--version"
+      ],
+      "note": "Debian/Ubuntuでは公式配布手順などを利用してください。"
+    },
+    {
+      "name": "Wasmer",
+      "category": "WebAssembly",
+      "description": "WebAssemblyランタイム",
+      "debian": [],
+      "arch": [
+        "wasmer"
+      ],
+      "check": [
+        "wasmer",
+        "--version"
+      ],
+      "note": "Debian/Ubuntuでは公式配布手順などを利用してください。"
+    },
+    {
+      "name": "Emscripten",
+      "category": "WebAssembly",
+      "description": "C/C++からWebAssemblyを生成するSDK",
+      "debian": [
+        "emscripten"
+      ],
+      "arch": [
+        "emscripten"
+      ],
+      "check": [
+        "emcc",
+        "--version"
+      ]
+    },
+    {
+      "name": "AssemblyScript",
+      "category": "WebAssembly",
+      "description": "TypeScript風構文でWebAssemblyを生成",
+      "debian": [
+        "nodejs",
+        "npm"
+      ],
+      "arch": [
+        "nodejs",
+        "npm"
+      ],
+      "check": [
+        "asc",
+        "--version"
+      ],
+      "note": "Node.js/npmを導入後、npm install -g assemblyscript で導入してください。"
+    },
+    {
+      "name": "GAS (GNU Assembler)",
+      "category": "アセンブリ",
+      "description": "GNU binutilsに含まれるアセンブラ",
+      "debian": [
+        "binutils"
+      ],
+      "arch": [
+        "binutils"
+      ],
+      "check": [
+        "as",
+        "--version"
+      ]
+    },
+    {
+      "name": "NASM",
+      "category": "アセンブリ",
+      "description": "x86/x86-64向けIntel記法アセンブラ",
+      "debian": [
+        "nasm"
+      ],
+      "arch": [
+        "nasm"
+      ],
+      "check": [
+        "nasm",
+        "-v"
+      ]
+    },
+    {
+      "name": "YASM",
+      "category": "アセンブリ",
+      "description": "NASM互換アセンブラ",
+      "debian": [
+        "yasm"
+      ],
+      "arch": [
+        "yasm"
+      ],
+      "check": [
+        "yasm",
+        "--version"
+      ]
+    },
+    {
+      "name": "FASM",
+      "category": "アセンブリ",
+      "description": "フラットアセンブラ",
+      "debian": [
+        "fasm"
+      ],
+      "arch": [
+        "fasm"
+      ],
+      "check": [
+        "fasm"
+      ]
+    },
+    {
+      "name": "Forth (Gforth)",
+      "category": "アセンブリ",
+      "description": "スタック指向プログラミング言語",
+      "debian": [
+        "gforth"
+      ],
+      "arch": [],
+      "check": [
+        "gforth",
+        "--version"
+      ],
+      "note": "Arch LinuxではAUR等が必要な場合があります。"
+    },
+    {
+      "name": "D (LDC)",
+      "category": "システム・低レイヤ",
+      "description": "ネイティブコンパイル可能なシステム言語",
+      "debian": [
+        "ldc"
+      ],
+      "arch": [
+        "ldc"
+      ],
+      "check": [
+        "ldc2",
+        "--version"
+      ]
+    },
+    {
+      "name": "Erlang",
+      "category": "関数型・論理型",
+      "description": "高並行・分散システム",
+      "debian": [
+        "erlang"
+      ],
+      "arch": [
+        "erlang"
+      ],
+      "check": [
+        "erl",
+        "-version"
+      ]
+    },
+    {
+      "name": "Elixir",
+      "category": "関数型・論理型",
+      "description": "Erlang VM上の関数型言語",
+      "debian": [
+        "elixir"
+      ],
+      "arch": [
+        "elixir"
+      ],
+      "check": [
+        "elixir",
+        "--version"
+      ]
+    },
+    {
+      "name": "OCaml",
+      "category": "関数型・論理型",
+      "description": "関数型言語・コンパイラ開発",
+      "debian": [
+        "ocaml"
+      ],
+      "arch": [
+        "ocaml"
+      ],
+      "check": [
+        "ocaml",
+        "--version"
+      ]
+    },
+    {
+      "name": "Julia",
+      "category": "科学技術・データ",
+      "description": "科学技術計算・数値シミュレーション",
+      "debian": [
+        "julia"
+      ],
+      "arch": [
+        "julia"
+      ],
+      "check": [
+        "julia",
+        "--version"
+      ]
+    },
+    {
+      "name": "Prolog (SWI-Prolog)",
+      "category": "関数型・論理型",
+      "description": "論理プログラミング・推論",
+      "debian": [
+        "swi-prolog"
+      ],
+      "arch": [
+        "swi-prolog"
+      ],
+      "check": [
+        "swipl",
+        "--version"
+      ]
+    },
+    {
+      "name": "AWK (GNU Awk)",
+      "category": "Web・スクリプト",
+      "description": "テキスト処理・ログ解析",
+      "debian": [
+        "gawk"
+      ],
+      "arch": [
+        "gawk"
+      ],
+      "check": [
+        "gawk",
+        "--version"
+      ]
+    },
+    {
+      "name": "Verilog (Icarus)",
+      "category": "ハードウェア記述",
+      "description": "デジタル回路の設計・シミュレーション",
+      "debian": [
+        "iverilog"
+      ],
+      "arch": [
+        "iverilog"
+      ],
+      "check": [
+        "iverilog",
+        "-V"
+      ]
+    },
+    {
+      "name": "VHDL (GHDL)",
+      "category": "ハードウェア記述",
+      "description": "ハードウェア記述言語・回路シミュレーション",
+      "debian": [
+        "ghdl"
+      ],
+      "arch": [
+        "ghdl"
+      ],
+      "check": [
+        "ghdl",
+        "--version"
+      ]
+    }
+  ]
+}
